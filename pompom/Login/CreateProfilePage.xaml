@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:pompom"
+    x:Class="pompom.Login.CreateProfilePage">
+	<ContentPage.Content>
+        <StackLayout Padding="20">  
+      <Label Text="Create account" FontSize="20"></Label>  
+      <Entry x:Name="MicrosoftAccount" Placeholder="Microsoft Account" WidthRequest="150"></Entry>  
+      <Entry x:Name="Password" Placeholder="Password" WidthRequest="150"></Entry>  
+      <Entry x:Name="Name" Placeholder="Real Name" WidthRequest="150"></Entry>  
+  
+      <StackLayout Orientation="Horizontal">  
+        <Label Text="Date of Birth" FontSize="20" VerticalOptions="End"/>  
+        <DatePicker x:Name="Date" WidthRequest="215"/>  
+      </StackLayout>  
+
+      <StackLayout Orientation="Horizontal" Margin = "0, 20, 0, 0" >  
+        <Button BackgroundColor="Gray" WidthRequest = "150" TextColor="White" Text="Create" HorizontalOptions = "CenterAndExpand" />  
+      </StackLayout> 
+
+      <StackLayout Orientation="Horizontal">  
+        <Button BackgroundColor="Maroon" WidthRequest = "200" TextColor="White" Text="I have an account" HorizontalOptions = "CenterAndExpand" />  
+      </StackLayout>
+            
+    </StackLayout>  
+  </ContentPage.Content>
+</ContentPage>

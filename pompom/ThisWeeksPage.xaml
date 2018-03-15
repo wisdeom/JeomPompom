@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:pompom" 
+             x:Class="pompom.ThisWeeksPage">
+
+    <StackLayout Orientation="Vertical">
+        <Label Text="This week's people" FontSize="Large" HorizontalOptions="Center"/>
+        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="Black"/>
+
+        <ListView RowHeight="140" x:Name="listView" ItemTapped="onItemClicked">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="White"
+                                     Margin="16"
+                         Orientation="Horizontal" VerticalOptions="FillAndExpand" >
+                            <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="#bdbdbd">
+                                <Image WidthRequest="80" HeightRequest="80">
+                                    <Image.Source>
+                                        <OnPlatform x:TypeArguments="ImageSource">
+                                            <OnPlatform.iOS>
+                                                <FileImageSource File="Images/no_photo.png"/>
+                                            </OnPlatform.iOS>
+                                            <OnPlatform.Android>
+                                                <FileImageSource File="no_photo.png"/>
+                                            </OnPlatform.Android>
+                                            <OnPlatform.WinPhone>
+                                                <FileImageSource File="Images/no_photo.png"/>
+                                            </OnPlatform.WinPhone>
+                                        </OnPlatform>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding Profile.FirstName}" TextColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="Center" x:Name="firstNameLabel"/>
+
+                            </StackLayout>
+                            <Label HorizontalOptions="FillAndExpand" HeightRequest="88"
+                                   Margin="16,4,16,4"
+                                   Text="{Binding MessageFromePerson}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

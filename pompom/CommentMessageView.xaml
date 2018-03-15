@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="pompom.CommentMessageView">
+  <ContentView.Content>
+        <StackLayout Orientation="Vertical" Margin="16,16,16,0">
+            <StackLayout Orientation="Horizontal">
+                <Image WidthRequest="20" HeightRequest="20" Margin="0,4,8,4" VerticalOptions="Start">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <OnPlatform.iOS>
+                                <FileImageSource File="Images/no_photo.png"/>
+                            </OnPlatform.iOS>
+                            <OnPlatform.Android>
+                                <FileImageSource File="no_photo.png"/>
+                            </OnPlatform.Android>
+                            <OnPlatform.WinPhone>
+                                <FileImageSource File="Images/no_photo.png"/>
+                            </OnPlatform.WinPhone>
+                        </OnPlatform>
+                    </Image.Source>
+                </Image>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label FontAttributes="Bold" Text="{Binding FullName}" x:Name="nameLabel"/>
+                        <Label HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" Text="posted right now" 
+                       FontSize="Small" TextColor="#E0E0E0"/>
+                    </StackLayout>
+                    <Label HorizontalOptions="FillAndExpand" x:Name="messageLabel" Text="{Binding MessageFromePerson}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal" Margin="16,0,16,0">
+                <ContentView Padding="4,1,4,1" BackgroundColor="#616161" Margin="0,0,32,0" x:Name="noCommentsView">
+                    <Label Text="No comments yet" HorizontalOptions="FillAndExpand"  TextColor="White" 
+                   VerticalOptions="Center" x:Name="noCommentsLabel"/>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNoCommentsClicked" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="etCommentContainer" HorizontalOptions="FillAndExpand" Padding="4,1,4,1" Margin="0,0,32,0">
+                    <Entry x:Name="etCommentHere" Placeholder="Your comment here" Completed="CommentEntered"/>
+                </ContentView>
+                <Image WidthRequest="25" HeightRequest="25">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLikeClicked" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <OnPlatform.iOS>
+                                <FileImageSource File="Images/ic_thumb_up_2x.png"/>
+                            </OnPlatform.iOS>
+                            <OnPlatform.Android>
+                                <FileImageSource File="ic_thumb_up_black_24dp.png"/>
+                            </OnPlatform.Android>
+                            <OnPlatform.WinPhone>
+                                <FileImageSource File="Images/ic_thumb_up_2x.png"/>
+                            </OnPlatform.WinPhone>
+                        </OnPlatform>
+                    </Image.Source>
+                </Image>
+                <Label Text="{Binding LikesCount}" FontSize="Small" VerticalOptions="Center" x:Name="likesCountLabel" />
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>

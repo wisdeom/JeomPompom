@@ -1,0 +1,16 @@
+﻿{
+  "dependencies": {
+    "Microsoft.AppCenter": "1.0.0",
+    "Microsoft.AppCenter.Analytics": "1.0.0",
+    "Microsoft.AppCenter.Crashes": "1.0.0",
+    "Microsoft.AppCenter.Distribute": "1.0.0",
+    "Microsoft.AppCenter.Push": "1.0.0",
+    "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.17.1",
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+    "NETStandard.Library": "1.6.0",
+    "Xamarin.Forms": "2.4.0.74863"
+  },
+  "frameworks": {
+    "netstandard1.5": {}
+  }
+}
